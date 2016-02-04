@@ -15,11 +15,12 @@ class ViewController: UIViewController, UITableViewDelegate, SFSafariViewControl
     
     var parser: FeedParser?
     var entries: [FeedItem]?
+    let feedUrl = "http://www.idownloadblog.com/feed/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         entries = []
-            self.parser = FeedParser(feedURL: "http://www.idownloadblog.com/feed/")
+            self.parser = FeedParser(feedURL:feedUrl)
             self.parser?.delegate = self
             self.parser?.parse()
 
